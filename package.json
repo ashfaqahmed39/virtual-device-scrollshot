@@ -23,7 +23,10 @@
   ],
   "scripts": {
     "check": "node scripts/check-syntax.mjs",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "test:integration": "npm run test:integration:android",
+    "test:integration:android": "node test/integration.mjs",
+    "test:integration:ios": "node test/ios-integration.mjs"
   },
   "engines": {
     "node": "^20.19.0 || ^22.12.0 || >=24.0.0",

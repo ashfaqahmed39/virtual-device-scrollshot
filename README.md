@@ -7,7 +7,7 @@ Capture one continuous full-page PNG from the foreground app on an Android emula
 
 Virtual Device Scrollshot uses Appium to control the real native scroll container and Sharp to remove repeated viewport content. It preserves fixed system and app chrome once and fails explicitly when frames cannot be stitched reliably.
 
-For a complete local daemon implementation that provides device discovery, app installation and launch, standard screenshots, and full-page capture through an HTTP API, see [Pixel Perfect Local Daemon](https://github.com/ashfaqahmed39/local-daemon).
+For a complete local daemon implementation that provides device discovery, app installation and launch, standard screenshots, and full-page capture through an HTTP API, see [Local Daemon](https://github.com/ashfaqahmed39/local-daemon).
 
 ## Examples
 

@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+dist/
+*.log
+*.png
+!.github/**/*.png
+!docs/images/**/*.png
+.DS_Store
+.env

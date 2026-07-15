@@ -1,0 +1,58 @@
+{
+  "name": "virtual-device-scrollshot",
+  "version": "0.1.0",
+  "description": "Capture full-page screenshots from Android devices and iOS simulators.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "virtual-device-scrollshot": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs/images",
+    "examples",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node scripts/check-syntax.mjs",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0",
+    "npm": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashfaqahmed39/virtual-device-scrollshot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashfaqahmed39/virtual-device-scrollshot/issues"
+  },
+  "homepage": "https://github.com/ashfaqahmed39/virtual-device-scrollshot#readme",
+  "keywords": [
+    "android",
+    "ios",
+    "appium",
+    "emulator",
+    "simulator",
+    "screenshot",
+    "scrolling-screenshot",
+    "uiautomator2",
+    "xcuitest",
+    "visual-testing"
+  ],
+  "author": "Ashfaq Ahmed",
+  "license": "MIT",
+  "dependencies": {
+    "appium": "3.5.2",
+    "sharp": "0.35.3"
+  }
+}

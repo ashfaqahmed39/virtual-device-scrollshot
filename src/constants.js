@@ -1,0 +1,9 @@
+export const PACKAGE_NAME = 'virtual-device-scrollshot'
+export const PACKAGE_VERSION = '0.1.0'
+export const APPIUM_VERSION = '3.5.2'
+export const UIAUTOMATOR2_VERSION = '8.1.0'
+export const XCUITEST_VERSION = '11.17.6'
+export const DEFAULT_MAX_FRAMES = 20
+export const DEFAULT_MAX_HEIGHT = 30000
+export const DEFAULT_SCROLL_PERCENT = 0.72
+export const DEFAULT_IOS_SCROLL_PERCENT = 0.4

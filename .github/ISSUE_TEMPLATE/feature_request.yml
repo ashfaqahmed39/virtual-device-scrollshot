@@ -1,0 +1,61 @@
+name: Feature request
+description: Suggest an improvement or new capability for Virtual Device Scrollshot
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Virtual Device Scrollshot. Focus on the problem and use case before proposing an implementation.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What are you trying to accomplish, and what prevents you from doing it today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior or interface you would like to see.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Area
+      options:
+        - Android capture
+        - iOS capture
+        - Image stitching
+        - CLI
+        - JavaScript API
+        - Setup and device discovery
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe current workarounds or other approaches you considered.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add examples, screenshots, links, or compatibility considerations that clarify the request.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate request.
+          required: true
+        - label: This request is within the scope of native Android devices/emulators or iOS simulators.
+          required: true

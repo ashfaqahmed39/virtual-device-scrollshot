@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/ashfaqahmed39/virtual-device-scrollshot/security/policy
+    about: Report security vulnerabilities privately by following the security policy.

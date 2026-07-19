@@ -1,0 +1,110 @@
+name: Bug report
+description: Report a reproducible problem with capture, stitching, setup, or the CLI
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Complete the details below so it can be reproduced and diagnosed.
+
+        Do not include credentials, signing secrets, private app data, or other sensitive information.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+      description: Describe what went wrong and the impact it has.
+      placeholder: The capture stops after the first frame...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the command or API call and the smallest reliable sequence of steps.
+      placeholder: |
+        1. Open the Settings app on the About screen.
+        2. Run `npx virtual-device-scrollshot --platform android --verbose`.
+        3. Observe that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Target platform
+      options:
+        - Android emulator
+        - Android physical device
+        - iOS simulator
+        - Not platform-specific
+    validations:
+      required: true
+
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      description: Run `virtual-device-scrollshot --version` or `npm list virtual-device-scrollshot`.
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      description: Run `node --version`.
+      placeholder: v22.14.0
+    validations:
+      required: true
+
+  - type: input
+    id: host
+    attributes:
+      label: Host environment
+      description: Include the operating system, version, and CPU architecture.
+      placeholder: macOS 15.5, Apple Silicon
+    validations:
+      required: true
+
+  - type: textarea
+    id: target
+    attributes:
+      label: Device and app details
+      description: Include the device model, OS version, app framework, and scroll-container type when known.
+      placeholder: Pixel 8 emulator, Android 15, React Native app, native ScrollView
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and screenshots
+      description: Paste relevant verbose output or attach a redacted screenshot. Use a code block for logs.
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add anything else that may help, including whether the issue is intermittent or a regression.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I removed credentials, private app data, and other sensitive information.
+          required: true

@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+  packages: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: "@ashfaqahmed39"
+
+      - name: Verify tag matches package version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PACKAGE_VERSION="$(node --print "require('./package.json').version")"
+
+          if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
+            echo "Tag version $TAG_VERSION does not match package version $PACKAGE_VERSION."
+            exit 1
+          fi
+
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm pack --dry-run
+
+      - name: Prepare scoped GitHub package
+        run: |
+          npm pkg set name="@ashfaqahmed39/virtual-device-scrollshot"
+          npm pkg set publishConfig.registry="https://npm.pkg.github.com"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          make_latest: ${{ !contains(github.ref_name, '-') }}
+
+      - name: Publish GitHub Package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
